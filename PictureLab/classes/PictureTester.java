@@ -42,12 +42,28 @@ public class PictureTester
     caterpillar.explore();
   }
   
+  public static void testMirrorHorizontalBotToTop()
+  {
+    Picture caterpillar = new Picture("caterpillar.jpg");
+    caterpillar.explore();
+    caterpillar.mirrorHorizontalBotToTop();
+    caterpillar.explore();
+  }
+  
   /** Method to test mirrorTemple */
   public static void testMirrorTemple()
   {
     Picture temple = new Picture("temple.jpg");
     temple.explore();
     temple.mirrorTemple();
+    temple.explore();
+  }
+  
+    public static void testMirrorArms()
+  {
+    Picture temple = new Picture("snowman.jpg");
+    temple.explore();
+    temple.mirrorArms();
     temple.explore();
   }
   

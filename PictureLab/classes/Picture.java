@@ -194,39 +194,52 @@ public class Picture extends SimplePicture
     System.out.println(count);
   }
   
-    public void mirrorArms()
+  public void mirrorArms()
   {
     int mirrorPoint1 = 190;
-    int mirrorPoint2 = 159;
+    int mirrorPoint2 = 195;
     Pixel leftPixel = null;
     Pixel rightPixel = null;
-    int count = 0;
     Pixel[][] pixels = this.getPixels2D();
     
     // Right
-    for (int row = 105; row < 169; row++)
+    for (int row = 159; row < 190; row++)
     {
       // loop from 13 to just before the mirror point
-      for (int col = 159; col < mirrorPoint1; col++)
+      for (int col = 105; col < 169; col++)
       {
-        //count++;
-        leftPixel = pixels[row][col];      
-        rightPixel = pixels[row]                       
-                         [mirrorPoint1 - col + mirrorPoint1];
+        leftPixel = pixels[row][col];
+        rightPixel = pixels[mirrorPoint1 + (mirrorPoint1 - row)][col];
         rightPixel.setColor(leftPixel.getColor());
       }
     }
-    
     //Left
-    for (int row = 139; row < 172; row++)
+    for (int row = 172; row < 195; row++)
     {
       // loop from 13 to just before the mirror point
-      for (int col = 239; col < mirrorPoint2; col++)
+      for (int col = 239; col < 293; col++)
       {
-        //count++;
+        leftPixel = pixels[row][col];
+        rightPixel = pixels[mirrorPoint2 + (mirrorPoint2 - row)][col];
+        rightPixel.setColor(leftPixel.getColor());
+      }
+    }
+  }
+  
+  public void mirrorGull()
+  {
+    int mirrorPoint = 341;
+    Pixel leftPixel = null;
+    Pixel rightPixel = null;
+    Pixel[][] pixels = this.getPixels2D();
+    
+    for (int row = 235; row < 320; row++)
+    {
+      for (int col = 237; col < mirrorPoint; col++)
+      {
         leftPixel = pixels[row][col];      
         rightPixel = pixels[row]                       
-                         [mirrorPoint2 - col + mirrorPoint2];
+                         [mirrorPoint - col + mirrorPoint];
         rightPixel.setColor(leftPixel.getColor());
       }
     }

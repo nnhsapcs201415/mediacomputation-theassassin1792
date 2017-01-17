@@ -61,9 +61,17 @@ public class PictureTester
   
     public static void testMirrorArms()
   {
-    Picture temple = new Picture("snowman.jpg");
+    Picture Arms = new Picture("snowman.jpg");
+    Arms.explore();
+    Arms.mirrorArms();
+    Arms.explore();
+  }
+  
+    public static void testMirrorGull()
+  {
+    Picture temple = new Picture("seagull.jpg");
     temple.explore();
-    temple.mirrorArms();
+    temple.mirrorGull();
     temple.explore();
   }
   

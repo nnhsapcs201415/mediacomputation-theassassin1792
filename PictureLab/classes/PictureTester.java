@@ -91,7 +91,7 @@ public class PictureTester
     temple.explore();
   }
   
-    public static void testMirrorArms()
+  public static void testMirrorArms()
   {
     Picture Arms = new Picture("snowman.jpg");
     Arms.explore();
@@ -99,12 +99,21 @@ public class PictureTester
     Arms.explore();
   }
   
-    public static void testMirrorGull()
+  public static void testMirrorGull()
   {
-    Picture temple = new Picture("seagull.jpg");
-    temple.explore();
-    temple.mirrorGull();
-    temple.explore();
+    Picture Gull = new Picture("seagull.jpg");
+    Gull.explore();
+    Gull.mirrorGull();
+    Gull.explore();
+  }
+  
+  public static void testCropAndCopy()
+  {
+    Picture Crop1 = new Picture("caterpillar.jpg");
+    Picture Crop2 = new Picture("640x480.jpg");
+    Crop2.explore();
+    Crop2.cropAndCopy( Crop1, 30, 45, 30, 85, 100, 100 );
+    Crop2.explore();
   }
   
   /** Method to test the collage method */

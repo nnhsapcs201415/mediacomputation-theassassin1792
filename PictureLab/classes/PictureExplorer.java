@@ -800,8 +800,10 @@ public class PictureExplorer implements MouseMotionListener, ActionListener, Mou
    */
   public static void main( String args[])
   {
-    Picture pix = new Picture("Destiny Gjallarhorn.png");
+    Picture pix = new Picture("Iron Banner Wallpaper.png");
+    Picture pix2 = new Picture("Iron Banner Helmets.jpg");
     pix.explore();
+    pix2.explore();
   }
   
 }

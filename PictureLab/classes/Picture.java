@@ -359,7 +359,13 @@ public class Picture extends SimplePicture
     public void createCollage()
     {
         Picture helmets = new Picture("Iron Banner Helmets.jpg");
-        this.cropAndCopy( helmets, 0, 190, 0, 190, 0, 0 );
+        this.cropAndCopy(helmets, 0, 190, 0, 190, 0, 0);
+        this.cropAndCopy(helmets, 190, 378, 0, 190, 0, 1519);
+        this.cropAndCopy(helmets, 0, 190, 190, 382, 400, 0);
+        this.cropAndCopy(helmets, 190, 378, 190, 380, 400, 1519);
+        this.cropAndCopy(helmets, 0, 190, 382, 574, 799, 0);
+        this.cropAndCopy(helmets, 190, 378, 380, 574, 799, 1519);
+        
 //     Picture flower1 = new Picture("flower1.jpg");
 //     Picture flower2 = new Picture("flower2.jpg");
 //     this.copy(flower1,0,0);
@@ -374,6 +380,29 @@ public class Picture extends SimplePicture
 //     this.write("collage.jpg");
     }
 
+    public void collageColor(String color, int percent)
+    {
+        Pixel[][] pixels = this.getPixels2D();
+        for (Pixel[] rowArray : pixels)
+        {
+            for (Pixel pixelObj : rowArray)
+            {
+                if(!color.equals("Red"))
+                {
+                    pixelObj.setRed(pixelObj.getRed()/percent);
+                }
+                if (!color.equals("Blue"))
+                {
+                    pixelObj.setRed(pixelObj.getBlue()/percent);
+                }
+                if (!color.equals("Green"))
+                {
+                    pixelObj.setRed(pixelObj.getGreen()/percent);
+                }
+            }
+        }
+    }
+    
     /** Method to show large changes in color 
      * @param edgeDist the distance for finding edges
      */

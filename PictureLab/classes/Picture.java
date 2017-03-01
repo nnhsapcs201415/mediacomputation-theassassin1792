@@ -359,6 +359,7 @@ public class Picture extends SimplePicture
     public void createCollage()
     {
         Picture helmets = new Picture("Iron Banner Helmets.jpg");
+        
         this.cropAndCopy(helmets, 0, 190, 0, 190, 0, 0);
         this.cropAndCopy(helmets, 190, 378, 0, 190, 0, 1519);
         this.cropAndCopy(helmets, 0, 190, 190, 382, 400, 0);
@@ -366,18 +367,22 @@ public class Picture extends SimplePicture
         this.cropAndCopy(helmets, 0, 190, 382, 574, 799, 0);
         this.cropAndCopy(helmets, 190, 378, 380, 574, 799, 1519);
         
-//     Picture flower1 = new Picture("flower1.jpg");
-//     Picture flower2 = new Picture("flower2.jpg");
-//     this.copy(flower1,0,0);
-//     this.copy(flower2,100,0);
-//     this.copy(flower1,200,0);
-//     Picture flowerNoBlue = new Picture(flower2);
-//     flowerNoBlue.zeroBlue();
-//     this.copy(flowerNoBlue,300,0);
-//     this.copy(flower1,400,0);
-//     this.copy(flower2,500,0);
-//     this.mirrorVertical();
-//     this.write("collage.jpg");
+        this.mirrorHorizontalBotToTop();
+        this.collageColor("Red", 10);
+        this.write("Alec Himmelblau.jpg");
+        
+        //     Picture flower1 = new Picture("flower1.jpg");
+        //     Picture flower2 = new Picture("flower2.jpg");
+        //     this.copy(flower1,0,0);
+        //     this.copy(flower2,100,0);
+        //     this.copy(flower1,200,0);
+        //     Picture flowerNoBlue = new Picture(flower2);
+        //     flowerNoBlue.zeroBlue();
+        //     this.copy(flowerNoBlue,300,0);
+        //     this.copy(flower1,400,0);
+        //     this.copy(flower2,500,0);
+        //     this.mirrorVertical();
+        //     this.write("collage.jpg");
     }
 
     public void collageColor(String color, int percent)
@@ -393,11 +398,11 @@ public class Picture extends SimplePicture
                 }
                 if (!color.equals("Blue"))
                 {
-                    pixelObj.setRed(pixelObj.getBlue()/percent);
+                    pixelObj.setBlue(pixelObj.getBlue()/percent);
                 }
                 if (!color.equals("Green"))
                 {
-                    pixelObj.setRed(pixelObj.getGreen()/percent);
+                    pixelObj.setGreen(pixelObj.getGreen()/percent);
                 }
             }
         }
